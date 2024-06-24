@@ -38,6 +38,8 @@ public class health_changer : MonoBehaviour
         if(slider.value <= 0 )
         {
             jug2?.Invoke();
+            FindObjectOfType<audio_manager>().play_sound("background_go");
+            FindObjectOfType<audio_manager>().play_sound("gameover");
         }
     }
 }
