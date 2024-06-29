@@ -37,7 +37,7 @@ public class audio_manager : MonoBehaviour
     {
          n= Array.Find(t, o=>o.name==s_name);
         n.source.Play();
-        Debug.Log(n.name);  
+        //Debug.Log(n.name);  
         if(s_name== "background_go"|| s_name== "gameover")
         {
 

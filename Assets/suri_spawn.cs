@@ -5,7 +5,8 @@ using UnityEngine;
 public class suri_spawn : MonoBehaviour
 {
     float time = 0f;
-    public float range = 7f;
+    //public float range = 7f;
+   [Range(3,15)] public float range;
     public float hori_range = 2f;
     public GameObject suri;
     public float up;

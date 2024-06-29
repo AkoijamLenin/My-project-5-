@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
+   
+
     public Rigidbody2D rd;
     public Transform gdcheck;
     public float radius=0.9f;
@@ -31,6 +33,8 @@ public class player_movement : MonoBehaviour
     public float jumpbuffer = 1f;
     private float jumpbuffercounter;
     private float dashdirection;
+
+    //new lines of code
     void Update()
     {
          //Debug.Log("y="+rd.velocity.y);
@@ -54,6 +58,7 @@ public class player_movement : MonoBehaviour
                 jumpcheck += 1;
                 if (jumpcheck <= 1) { canjump = true; }
                 else { canjump = false; }
+         
                 
             }
            // rd.AddForce(new Vector2(transform.localScale.x*1000f,jumpspeed),ForceMode2D.Impulse);
@@ -68,6 +73,7 @@ public class player_movement : MonoBehaviour
         {
             canjump = true;
             cayotecounter = cayote;
+           
         }
         if(isgrounded==false)
         {
@@ -82,9 +88,12 @@ public class player_movement : MonoBehaviour
         }
 
         isgrounded = Physics2D.OverlapCircle(gdcheck.position,radius,lm);
-        
+
+    
 
     }
+        
+    
     private void FixedUpdate()
     {
         /*
@@ -105,20 +114,20 @@ public class player_movement : MonoBehaviour
         if (horizontal>0&&isright==false )
         {
             flip();
-           
+            
         }
             
         if (horizontal < 0 && isright == true)
         {
             flip();
-           
+            
         }
        if(rd.velocity.y<0) { rd.gravityScale =fallgrav; }
        if(isgrounded) { 
             
         rd.gravityScale=2.5f;
         }
-
+      
 
     }
 
@@ -129,6 +138,7 @@ public class player_movement : MonoBehaviour
        // gameObject.transform.localScale = temp;
        transform.Rotate(0,180,0);
         isright = !isright;
+        
     }
     private IEnumerator dash()
     {
@@ -151,5 +161,5 @@ public class player_movement : MonoBehaviour
 
 
     }
-   
+
 }
